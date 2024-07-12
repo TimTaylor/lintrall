@@ -67,13 +67,13 @@ use_all_linters <- function(..., dir = ".", overwrite = FALSE) {
         )
 
         description <- rd[1L]
-        Rd2txt(description, out = f, fragment = TRUE, underline_titles = FALSE)
+        Rd2txt(description, out = f, fragment = TRUE, options = list(underline_titles = FALSE))
         description <- readLines(f)
 
         arguments <- rd[2L]
         # not every linter has arguments so only handle those that do
         if (lengths(arguments) != 0L) {
-            Rd2txt(arguments, out = f, fragment = TRUE, underline_titles = FALSE)
+            Rd2txt(arguments, out = f, fragment = TRUE, options = list(underline_titles = FALSE))
             arguments <- readLines(f)
             description <- c(description, arguments)
         }
