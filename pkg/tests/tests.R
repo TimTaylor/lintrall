@@ -1,7 +1,7 @@
 # Could a temporary directory get reused whilst interactively testing???
 # just in case ...
-library(lintr)
-library(lintrall)
+library(lintr)    # nolint
+library(lintrall) # nolint
 dir <- tempdir()
 target <- file.path(dir, ".lintr.R")
 exists <- file.exists(target)
